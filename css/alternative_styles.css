@@ -1,0 +1,192 @@
+.dark{
+    background:#36393f;
+    color:white
+}
+
+.dark > hr {
+    border-top: 1px solid gray;
+}
+
+.dark .well{
+    background:#303338 !important;
+    border-color: #222;
+    color:white;
+}
+
+.dark li > code {
+    background-color:#303338;
+}
+
+.dark h3 > code {
+    background-color: #303338;
+}
+
+.dark p > code {
+    background-color: #303338;
+}
+
+.dark .student_task_controls .student_task_done {
+    box-shadow: 3px 3px 3px #222;
+}
+
+.dark .users_done_for_task{
+    box-shadow: 3px 3px 3px #222 !important;
+}
+
+.dark .student_correction_requests{
+    background-color:#36393f;
+    border:none;
+}
+
+.dark .list-group-item.in_second_deadline{
+    background-color: #303338 !important;
+}
+
+.dark .student_correction_requests > button {
+    background:#db3e3e;
+    border:none;
+    outline:none;
+    color:white;
+    font-weight:bold;
+}
+
+.dark .btn-default{
+    background-color:#db3e3e;
+    color:white;
+    border:none;
+    outline: none;
+    transition: all 0.25s ease-in-out;
+}
+
+.dark .btn-default:hover{
+    background-color:#c72525 !important;
+    color:white !important;
+}
+
+.dark .student_task_done.btn.btn-default.no {
+    background:#303338;
+    color: white;
+}
+
+.dark .student_task_done.btn.btn-default.yes {
+    background:#db3e3e;
+    color: white;
+}
+
+.dark .student_task_controls{
+    background: #303338;
+    border-color: #222;
+}
+
+.dark .alert.alert-warning.mandatory-optional{
+    background: #303338;
+}
+   
+
+.dark .btn-default:active{
+    background-color:#c72525;
+    color:white !important;
+}
+.dark .task_progress_score_bar {
+    border-color: #222 !important;
+}
+.dark .task_progress_score_bar .task_score_bar{
+    background: #db3e3e;
+    border-color: #222;
+}
+
+.dark pre {
+    background:#303338 !important;
+    border-color: #222;
+}
+
+.dark pre > code {
+    color:white;
+    font-family:"Fira Code",monospace;
+}
+
+.dark .list-group-item {
+    background:#303338;
+    border-color: #222 !important;
+}
+
+.dark .list-group-item code {
+    color: white;
+    background-color: #db3e3e;
+    border-color: #222;
+}
+
+.dark .panel-default > .panel-heading {
+    background:#303338 !important;
+}
+
+.dark .panel {
+    border-color: #222 !important;
+}
+
+.dark .alert-info{
+    color: white;
+    background-color: #db3e3e;
+    border-color: #222;
+}
+
+.dark .modal-content {
+    background:#36393f;
+}
+
+.dark .modal-content .user {
+    background:#303338 ;
+    border:#222 1px solid !important;
+} 
+
+.dark .task_correction_modal .check-inline{
+    background-color: #303338 !important;
+}
+
+.dark .button.close {
+    color: white !important;
+}
+
+.dark .task_correction_modal .modal-content{
+    background:#36393f;
+}
+
+.dark .task_correction_modal .check-inline.requirement.success {
+    border: 1px solid #222 !important;
+}
+
+.dark .panel-title {
+    color:white;
+}
+
+.dark .panel-body{
+    background:#303338 !important;
+}
+
+.dark .alert-warning {
+    background-color:#303338 !important;
+}
+
+.dark tr {
+    background: #303338 !important;
+}
+
+/* table,head,td,tr{
+    background:white;
+}
+
+.dark table thead td tr {
+    background:#303338 ;
+    border-color:#222 1px solid;
+} */
+
+.dark .modal-content .user code {
+    background:#db3e3e ;
+    color:white;
+}
+
+.dark .form-control{
+    background:#303338 !important;
+    border-color:#222 1px solid !important;
+    color:white;
+}
