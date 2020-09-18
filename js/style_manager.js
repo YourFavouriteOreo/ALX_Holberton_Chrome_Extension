@@ -1,6 +1,7 @@
 function skinChange() {
     // Change the skin and remove or apply dark mode
     chrome.storage.sync.get("skin", function (data) {
+        let bgColor, border, linkTextColor;
         var bodyElement = document.getElementsByTagName("body")[0];
         if (data.skin == "dark") {
             bodyElement.classList.add("dark");
@@ -9,10 +10,68 @@ function skinChange() {
                     displayDarkSide(bodyElement);
                 }
             });
+            bgColor = "rgb(48, 51, 56)";
+            border = "1px solid rgb(34, 34, 34)";
+            linkTextColor = "white";
         } else {
+            bgColor = "white";
+            border = "1px #eeeeee solid";
+            linkTextColor = "black";
             if (bodyElement.classList.contains("dark")) {
                 bodyElement.classList.remove("dark");
             }
+        }
+
+        if (window.location.href.includes("/projects/")) {
+            // Create a container for the nav's
+            let container = document.createElement("DIV");
+            Object.assign(container.style, {
+                width: "auto",
+                height: "auto",
+                position: "absolute",
+                top: "15px",
+                right: "50px",
+                "text-align": "left",
+                "max-width": "500px",
+                "background-color": `${bgColor}`,
+                padding: "15px",
+                border: `${border}`,
+                "max-height": "calc(100vh - 30px)",
+                "overflow-y": "auto",
+            });
+
+            // Get all header 4 task titels
+            let tasksList = Array.from(document.body.querySelectorAll(".task"));
+
+            // Give the tasks an id to reference them by
+            for (let i = 0; i < tasksList.length; i++) {
+                tasksList[i].id = tasksList[i].innerText;
+            }
+
+            // Create a button that will be used to toggle the nav bar
+            let toggleButton = document.createElement("button");
+            toggleButton.textContent = "Nav";
+            toggleButton.classList.add("btn-default");
+            toggleButton.classList.add("btn");
+            toggleButton.style["margin-bottom"] = "12px";
+            toggleButton.onclick = toggleNav;
+            container.appendChild(toggleButton);
+
+            // Create links to the questions and add those to the container
+            for (let i = 0; i < tasksList.length; i++) {
+                let taskLink = document.createElement("a");
+                taskLink.setAttribute("href", `#${tasksList[i].id}`);
+                taskLink.innerText = tasksList[i].innerText;
+                Object.assign(taskLink.style, {
+                    display: "block",
+                    color: `${linkTextColor}`,
+                    "margin-bottom": "10px",
+                    "text-decoration": "none",
+                });
+                taskLink.classList.add("task-nav-link");
+                container.appendChild(taskLink);
+            }
+            document.body.appendChild(container);
         }
     });
 }
@@ -73,59 +132,15 @@ if (window.location.href.includes("/projects/")) {
         }
     }
     tasks.after(taskButton);
-
-
-    // Create a container for the nav's
-    let container = document.createElement("DIV");
-    Object.assign(container.style,{width : "auto", height: "auto", position:"absolute", top:"15px", right:"50px", "text-align": "left","max-width":"500px", "background-color": "rgb(48, 51, 56)", "padding": "15px", "border": "1px solid rgb(34, 34, 34)", "max-height": "calc(100vh - 30px)", "overflow-y": "auto",}); 
-    // Get all header 4 task titels  
-    let tasksList =  Array.from(document.body.querySelectorAll(".task"));
-
-    // Give the tasks an id to reference them by
-    for (let i = 0; i < tasksList.length; i++)
-    {
-        tasksList[i].id = tasksList[i].innerText;
-    } 
-    
-    // Create a button that will be used to toggle the nav bar
-    let toggleButton = document.createElement("button");
-    toggleButton.textContent = "Nav";
-    toggleButton.classList.add("btn-default");
-    toggleButton.classList.add("btn");
-    toggleButton.style["margin-bottom"] = "12px";
-    toggleButton.onclick = toggleNav;
-    container.appendChild(toggleButton);
-
-    // Create links to the questions and add those to the container
-    for (let i = 0; i < tasksList.length; i++)
-    {
-        let taskLink = document.createElement('a');
-        taskLink.setAttribute('href',`#${tasksList[i].id}`);
-        taskLink.innerText = tasksList[i].innerText;
-        Object.assign(taskLink.style,{display : "block", color: "white", "margin-bottom": "10px","text-decoration":"none",});
-        taskLink.classList.add("task-nav-link");
-        container.appendChild(taskLink);              
-    }
-
-
-
-    taskButton.after(container);
 }
 // Toggle between showing the navs and hiddign them
-function toggleNav(){
-
+function toggleNav() {
     let taskLinks = document.body.querySelectorAll(".task-nav-link");
-    for(let i = 0; i < taskLinks.length; i++)
-    {
-        if (taskLinks[i].style.display === "none")
-        {
+    for (let i = 0; i < taskLinks.length; i++) {
+        if (taskLinks[i].style.display === "none") {
             taskLinks[i].style.display = "block";
-        }
-        else
-        {
+        } else {
             taskLinks[i].style.display = "none";
         }
-
     }
-
 }
