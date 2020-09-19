@@ -171,15 +171,6 @@
     background: #303338 !important;
 }
 
-/* table;head;td;tr{
-    background:white;
-}
-
-.dark table thead td tr {
-    background:#303338 ;
-    border-color:#222 1px solid;
-} */
-
 .dark .modal-content .user code {
     background:#db3e3e ;
     color:white;
