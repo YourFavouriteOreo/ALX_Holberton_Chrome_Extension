@@ -1,0 +1,33 @@
+#task-nav-panel {
+  width: auto;
+  height: auto;
+  position: absolute;
+  top: 15px;
+  right: 50px;
+  text-align: left;
+  max-width: 500px;
+  background-color: #f7f7f7;
+  padding: 15px;
+  border: 1px #eeeeee solid;
+  max-height: calc(100vh - 30px);
+  overflow-y: auto;
+}
+
+#task-nav-panel > a {
+  color: black;
+}
+
+.dark #task-nav-panel {
+  background-color: rgb(48, 51, 56);
+  border: 1px solid rgb(34, 34, 34);
+}
+
+.dark #task-nav-panel > a {
+  color: white;
+}
+
+.task-link-anchor {
+  display: block;
+  margin-bottom: 10px;
+  text-decoration: none;
+}

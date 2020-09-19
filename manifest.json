@@ -11,7 +11,7 @@
       {
           "matches": ["https://alx-intranet.hbtn.io/*"],
 
-          "css": ["css/alternative_styles.css","css/modal.css"],
+          "css": ["css/alternative_styles.css","css/modal.css","css/task-nav.css"],
           "js":["js/style_manager.js"]
       }
   ],

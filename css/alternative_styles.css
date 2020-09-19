@@ -102,7 +102,7 @@
 
 .dark pre > code {
     color:white;
-    font-family:"Fira Code",monospace;
+    font-family:"Fira Code" monospace;
 }
 
 .dark .list-group-item {
@@ -171,7 +171,7 @@
     background: #303338 !important;
 }
 
-/* table,head,td,tr{
+/* table;head;td;tr{
     background:white;
 }
 
