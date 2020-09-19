@@ -3,6 +3,7 @@ This is a chrome extension (made by a bored student) that as of this version per
 
 - It allows for a theme selector ( currently only supports light and dark )
 - It imports fira code and applies it as the default code font
+- It adds a fixed navigation menu to allow auto scrolling to each task
 
 - Automates testing for the entire task list
 
